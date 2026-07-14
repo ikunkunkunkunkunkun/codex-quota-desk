@@ -43,8 +43,13 @@ jobs:
           path: ${{ matrix.archive-name }}
           if-no-files-found: error
           retention-days: 90
-      - uses: softprops/action-gh-release@v2
-        with:
-          files: ${{ matrix.archive-name }}
-          draft: false
-          generate_release_notes: true
+      - name: Publish GitHub Release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: pwsh
+        run: |
+          gh release view "${{ github.ref_name }}" *> $null
+          if ($LASTEXITCODE -ne 0) {
+            gh release create "${{ github.ref_name }}" --title "${{ github.ref_name }}" --generate-notes
+          }
+          gh release upload "${{ github.ref_name }}" "${{ matrix.archive-name }}" --clobber
