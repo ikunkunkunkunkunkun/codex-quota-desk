@@ -50,14 +50,14 @@ git push origin main
 推送 `v*` tag 会触发 release workflow：
 
 ```bash
-git tag v0.1.0
-git push origin v0.1.0
+git tag v0.1.3
+git push origin v0.1.3
 ```
 
 构建完成后，到 GitHub 仓库的 Releases 页面检查 draft release。附件应包含：
 
-- `codex-quota-desk-windows-unsigned.zip`
-- `codex-quota-desk-macos-universal-unsigned.zip`
+- `quotalens-codex-windows-unsigned.zip`
+- `quotalens-codex-macos-universal-unsigned.zip`
 
 确认无误后点击 Publish release，然后把 Release 链接发给用户。
 
@@ -65,7 +65,7 @@ git push origin v0.1.0
 
 当前 macOS 包是 unsigned 包。用户首次打开可能会被 Gatekeeper 拦截，可以这样打开：
 
-1. 下载 `codex-quota-desk-macos-universal-unsigned.zip`。
+1. 下载 `quotalens-codex-macos-universal-unsigned.zip`。
 2. 解压后把应用拖到 Applications 或任意测试目录。
 3. 右键点击应用，选择 Open。
 4. 在系统提示里再次选择 Open。
@@ -82,3 +82,5 @@ git push origin v0.1.0
 - GitHub Secrets 中的签名和公证配置。
 
 这些账号、证书和密码不能由代码生成，需要项目所有者申请或购买。
+
+

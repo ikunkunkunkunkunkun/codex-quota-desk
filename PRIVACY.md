@@ -1,6 +1,6 @@
 # Privacy
 
-Codex Quota Desk is designed to be local-first and minimal.
+QuotaLens for Codex is designed to be local-first and minimal.
 
 ## What It Reads
 
@@ -10,7 +10,7 @@ Codex Quota Desk is designed to be local-first and minimal.
 
 ## What It Stores
 
-Codex Quota Desk stores only widget preferences in its own application config directory:
+QuotaLens for Codex stores only widget preferences in its own application config directory:
 
 - locked state
 - always-on-top state
@@ -34,4 +34,5 @@ Logs are intentionally generic. They must not include tokens, account IDs, raw b
 
 ## Accuracy Boundary
 
-Codex Quota Desk displays quota windows returned by the Codex quota service. It does not estimate quota from local token usage and does not fabricate values when the response shape is unknown.
+QuotaLens for Codex displays quota windows returned by the Codex quota service. It does not estimate quota from local token usage and does not fabricate values when the response shape is unknown.
+

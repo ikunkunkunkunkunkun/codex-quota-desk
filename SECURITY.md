@@ -2,7 +2,7 @@
 
 ## Supported Use
 
-Codex Quota Desk is a local desktop utility that reads Codex quota using the user's existing Codex Desktop login state.
+QuotaLens for Codex is a local desktop utility that reads Codex quota using the user's existing Codex Desktop login state.
 
 ## Reporting Issues
 
@@ -24,3 +24,4 @@ Before publishing a release, verify:
 - Windows/macOS bundles are built by CI or a clean machine.
 - Unsigned builds are clearly labeled as unsigned.
 - Signed releases are produced only with maintainer-controlled certificates and secrets.
+

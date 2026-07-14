@@ -1,8 +1,8 @@
-# Codex Quota Desk 项目简介
+# QuotaLens for Codex 项目简介
 
 ## 一句话定位
 
-Codex Quota Desk 是一个 Tauri 2 桌面悬浮窗，用本机 Codex Desktop 登录态只读查询 Codex 额度，并以小卡片展示 5 小时额度、每周额度、重置时间、重置机会和会员类型。
+QuotaLens for Codex 是一个 Tauri 2 桌面悬浮窗，用本机 Codex Desktop 登录态只读查询 Codex 额度，并以小卡片展示 5 小时额度、每周额度、重置时间、重置机会和会员类型。
 
 ## 当前技术栈
 
@@ -59,3 +59,4 @@ npm run tauri dev
 - 后续视觉调整默认只改共享 React/CSS，不维护 Windows/macOS 两套 UI。
 - 若启用 Claude provider，先补 provider adapter、类型收敛、轮播/固定逻辑和失败隔离测试。
 - 发布前补齐签名、公证、安装包扫描和日志隐私审计。
+

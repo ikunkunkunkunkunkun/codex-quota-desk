@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping improve Codex Quota Desk.
+Thanks for helping improve QuotaLens for Codex.
 
 ## Before Opening Issues
 
@@ -23,3 +23,4 @@ Use `npm run tauri dev` for desktop testing. Browser preview uses mock data and 
 - Preserve the privacy boundary documented in `PRIVACY.md`.
 - Do not add telemetry or raw response logging.
 - Add or update tests when changing quota parsing, snapshot merging, or formatting.
+

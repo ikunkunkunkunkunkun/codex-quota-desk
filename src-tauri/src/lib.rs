@@ -224,7 +224,7 @@ fn setup_tray(app: &tauri::App) -> tauri::Result<()> {
     let menu = Menu::with_items(app, &[&show, &refresh, &unlock, &pin, &language, &autostart, &quit])?;
     let mut builder = TrayIconBuilder::with_id("main")
         .menu(&menu)
-        .tooltip("Codex Quota Desk");
+        .tooltip("QuotaLens for Codex");
     if let Some(icon) = app.default_window_icon() {
         builder = builder.icon(icon.clone());
     }
@@ -324,7 +324,7 @@ pub fn run() {
             let client = reqwest::Client::builder()
                 .timeout(Duration::from_secs(12))
                 .redirect(reqwest::redirect::Policy::none())
-                .user_agent("CodexQuotaDesk/0.1")
+                .user_agent("QuotaLensCodex/0.1")
                 .build()
                 .expect("static HTTP client configuration must be valid");
             app.manage(AppState {
@@ -376,10 +376,11 @@ pub fn run() {
             }
         })
         .build(tauri::generate_context!())
-        .expect("failed to build Codex Quota Desk");
+        .expect("failed to build QuotaLens for Codex");
     app.run(|app_handle, event| {
         if matches!(event, tauri::RunEvent::Resumed) {
             let _ = app_handle.emit_to("widget", "refresh-requested", ());
         }
     });
 }
+

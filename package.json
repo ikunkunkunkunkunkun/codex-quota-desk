@@ -1,7 +1,7 @@
 {
-  "name": "codex-quota-desk",
+  "name": "quotalens-codex",
   "private": true,
-  "version": "0.1.0",
+  "version": "0.1.3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -28,3 +28,4 @@
     "vitest": "^3.2.4"
   }
 }
+

@@ -1,5 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 fn main() {
-    codex_quota_desk_lib::run();
+    quotalens_codex_lib::run();
 }
+

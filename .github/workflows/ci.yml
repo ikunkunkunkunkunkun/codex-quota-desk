@@ -24,7 +24,7 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            artifact-name: codex-quota-desk-windows-unsigned
+            artifact-name: quotalens-codex-windows-unsigned
             build-command: npm run tauri -- build
             artifact-path: src-tauri/target/release/bundle/**
     runs-on: ${{ matrix.os }}
@@ -47,3 +47,4 @@ jobs:
           path: ${{ matrix.artifact-path }}
           if-no-files-found: error
           retention-days: 14
+

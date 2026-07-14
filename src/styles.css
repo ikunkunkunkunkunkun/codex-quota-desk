@@ -1,7 +1,7 @@
-@font-face { font-family: "Desk Sans"; src: local("SF Pro Display"), local("Segoe UI Variable Display"); font-display: swap; }
+@font-face { font-family: "Lens Sans"; src: local("SF Pro Display"), local("Segoe UI Variable Display"); font-display: swap; }
 
 :root {
-  font-family: "Desk Sans", "Segoe UI", system-ui, sans-serif;
+  font-family: "Lens Sans", "Segoe UI", system-ui, sans-serif;
   color: rgba(255, 255, 255, 0.96);
   background: transparent;
   font-synthesis: none;
@@ -184,3 +184,4 @@ button { font: inherit; }
 .reset-design { min-height: 42px; border: 1px solid #d8dbe2; border-radius: 11px; color: #262a33; background: white; cursor: pointer; }
 .reset-design:hover { background: #f3f4f6; }
 @media (max-width: 820px) { .design-workbench { grid-template-columns: 1fr; } .design-stage { min-height: 520px; padding: 40px 20px; } .design-controls { position: static; height: auto; border-left: 0; border-top: 1px solid #dfe1e6; } }
+

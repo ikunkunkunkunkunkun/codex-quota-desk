@@ -15,8 +15,8 @@
 | 视觉 | 悬浮球和展开卡片 | Windows/macOS 使用同一 CSS 参数，尺寸、透明度、圆角、文字布局保持一致 | 待双平台截图验收 |
 | 生命周期 | 单实例、关闭隐藏、休眠恢复 | 无重复后台进程，窗口可恢复 | 待实机验证 |
 | 性能 | 空闲 CPU/内存 | 无持续高 CPU，记录平台基线 | 待安装包验证 |
-| 构建 | Windows unsigned 包 | 生成 `codex-quota-desk-windows-unsigned.zip` | CI/Release 验证 |
-| 构建 | macOS Universal unsigned 包 | 生成 `codex-quota-desk-macos-universal-unsigned.zip`，支持 Apple Silicon 和 Intel | CI/Release 验证 |
+| 构建 | Windows unsigned 包 | 生成 `quotalens-codex-windows-unsigned.zip` | CI/Release 验证 |
+| 构建 | macOS Universal unsigned 包 | 生成 `quotalens-codex-macos-universal-unsigned.zip`，支持 Apple Silicon 和 Intel | CI/Release 验证 |
 | 隐私 | 日志与配置扫描 | 无 token、账号 ID、原始响应 | 静态审查通过，待安装包扫描 |
 
 ## 发布门槛
@@ -28,3 +28,4 @@
 - Windows 实机完成安装、启动、托盘、拖动、锁定、语言切换、退出验证。
 - macOS 实机完成首次打开、菜单栏托盘、透明悬浮窗、展开/收起、拖动、置顶、读取 `~/.codex/auth.json` 验证。
 - 严重和高风险问题清零。
+

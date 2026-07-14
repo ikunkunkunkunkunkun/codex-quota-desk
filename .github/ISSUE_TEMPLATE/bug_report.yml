@@ -1,11 +1,11 @@
 name: Bug report
-description: Report a problem with Codex Quota Desk.
+description: Report a problem with QuotaLens for Codex.
 title: "[Bug]: "
 labels: ["bug"]
 body:
   - type: markdown
     attributes:
-      value: "Thanks for helping improve Codex Quota Desk. Please remove any personal account details from screenshots or logs."
+      value: "Thanks for helping improve QuotaLens for Codex. Please remove any personal account details from screenshots or logs."
   - type: dropdown
     id: os
     attributes:
@@ -19,7 +19,7 @@ body:
   - type: input
     id: version
     attributes:
-      label: Codex Quota Desk version
+      label: QuotaLens for Codex version
       placeholder: "Example: v0.1.2"
     validations:
       required: true
@@ -40,3 +40,4 @@ body:
     attributes:
       label: Screenshots or logs
       description: "Attach screenshots or logs if helpful. Remove tokens, account IDs, email addresses, and other private data first."
+

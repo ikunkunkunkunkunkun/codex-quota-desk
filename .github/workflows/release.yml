@@ -15,8 +15,8 @@ jobs:
       matrix:
         include:
           - os: windows-latest
-            artifact-name: codex-quota-desk-windows-unsigned
-            archive-name: codex-quota-desk-windows-unsigned.zip
+            artifact-name: quotalens-codex-windows-unsigned
+            archive-name: quotalens-codex-windows-unsigned.zip
             build-command: npm run tauri -- build
             artifact-path: src-tauri/target/release/bundle/*
     runs-on: ${{ matrix.os }}
@@ -53,3 +53,4 @@ jobs:
             gh release create "${{ github.ref_name }}" --title "${{ github.ref_name }}" --generate-notes
           }
           gh release upload "${{ github.ref_name }}" "${{ matrix.archive-name }}" --clobber
+

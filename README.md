@@ -1,8 +1,8 @@
-# Codex Quota Desk
+# QuotaLens for Codex
 
 Personal floating desktop widget for checking Codex quota from the local Codex Desktop login state.
 
-![Codex Quota Desk quota states](docs/images/quota-states.png)
+![QuotaLens for Codex quota states](docs/images/quota-states.png)
 
 ## Highlights
 
@@ -36,7 +36,7 @@ codex, quota, tauri, react, rust, desktop-app, windows, macos, productivity
 
 ## How It Works
 
-Codex Quota Desk reads the existing Codex Desktop login state on your machine and queries Codex/ChatGPT quota endpoints with that session. It does not estimate usage from local token counts and does not redeem reset credits or modify account settings.
+QuotaLens for Codex reads the existing Codex Desktop login state on your machine and queries Codex/ChatGPT quota endpoints with that session. It does not estimate usage from local token counts and does not redeem reset credits or modify account settings.
 
 Browser preview uses mock data. Real quota reading requires the Tauri desktop app and an existing Codex Desktop login on the same machine.
 
@@ -46,7 +46,7 @@ This is a personal build. If you publish installers from your own repository, us
 
 ## Privacy Boundary
 
-Codex Quota Desk is local-first and intentionally narrow:
+QuotaLens for Codex is local-first and intentionally narrow:
 
 - Reads the local Codex Desktop login state only to query Codex quota.
 - Sends the existing Codex access token only to ChatGPT quota endpoints.
@@ -86,7 +86,7 @@ npm run tauri build
 On Windows, Tauri may download WiX to create an MSI installer. If WiX download fails, the release executable may still be produced at:
 
 ```text
-src-tauri/target/release/codex-quota-desk.exe
+src-tauri/target/release/quotalens-codex.exe
 ```
 
 ## Release Hygiene
@@ -100,3 +100,4 @@ This project is based on `change-42-yhmm/quota-float`, used under the MIT Licens
 ## License
 
 MIT
+

@@ -1,5 +1,5 @@
 name: Feature request
-description: Suggest an improvement for Codex Quota Desk.
+description: Suggest an improvement for QuotaLens for Codex.
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
@@ -24,3 +24,4 @@ body:
         - macOS
         - Both
         - Not platform-specific
+

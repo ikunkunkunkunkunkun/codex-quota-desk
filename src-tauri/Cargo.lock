@@ -2698,8 +2698,8 @@ dependencies = [
 ]
 
 [[package]]
-name = "codex-quota-desk"
-version = "0.1.0"
+name = "quotalens-codex"
+version = "0.1.3"
 dependencies = [
  "base64 0.22.1",
  "chrono",
@@ -5365,3 +5365,4 @@ dependencies = [
  "syn 2.0.118",
  "winnow 1.0.3",
 ]
+
