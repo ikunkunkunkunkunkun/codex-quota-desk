@@ -1,6 +1,6 @@
 [package]
 name = "quotalens-codex"
-version = "0.1.5"
+version = "0.1.6"
 description = "A personal floating Codex quota monitor"
 authors = ["QuotaLens for Codex contributors"]
 license = "MIT"

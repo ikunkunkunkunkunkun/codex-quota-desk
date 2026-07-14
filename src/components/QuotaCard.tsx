@@ -94,7 +94,7 @@ export const QuotaCard = memo(function QuotaCard({
       <header className="card-header">
         <div>
           <p className="eyebrow">{snapshot.displayName} · {snapshot.plan ?? t.accountFallback}</p>
-          {snapshot.status !== "stale" ? <p className="updated">{t.shortRemaining}</p> : null}
+          {snapshot.status !== "stale" ? <p className="updated">{t.weeklyRemaining}</p> : null}
         </div>
         {!preferences.locked ? (
           <nav className="card-actions" aria-label={t.controls} onMouseDown={(event) => event.stopPropagation()}>
@@ -114,14 +114,16 @@ export const QuotaCard = memo(function QuotaCard({
           <section className="primary-metric" aria-label={t.availableLabel(primary)}>
             <span>{primary}</span><small>%</small>
           </section>
+          <p className="metric-caption">{t.shortRemaining}</p>
           <div className="progress" role="progressbar" aria-label={t.availableLabel(primary)} aria-valuemin={0} aria-valuemax={100} aria-valuenow={primary}>
             <span style={{ width: `${primary}%` }} />
           </div>
-          <p className="reset-time">{t.weeklyUntil(formatResetDate(snapshot.weeklyWindow?.resetsAt ?? null, language))}</p>
-          <footer className="card-footer">
-            <div className="weekly-metric">
+          <section className="quota-details">
+            <div className="detail-card">
               <p>{t.weeklyUntil(formatResetDate(snapshot.weeklyWindow?.resetsAt ?? null, language))}</p>
               <strong>{formatResetTime(snapshot.weeklyWindow?.resetsAt ?? null, new Date(), language)}</strong>
+            </div>
+            <div className="detail-card detail-card--credit" onMouseDown={(event) => event.stopPropagation()}>
               <div className="reset-credit-row" onMouseDown={(event) => event.stopPropagation()}>
                 <span>{snapshot.resetCredits === null ? t.resetCreditUnknown : t.resetCredits(snapshot.resetCredits)}</span>
                 {snapshot.resetCredits !== null && snapshot.resetCredits > 0 ? (
@@ -134,8 +136,8 @@ export const QuotaCard = memo(function QuotaCard({
                 </div>
               ) : null}
             </div>
-            <ProviderMark />
-          </footer>
+          </section>
+          <ProviderMark />
         </>
       ) : (
         <section className="error-state" aria-live="polite">
