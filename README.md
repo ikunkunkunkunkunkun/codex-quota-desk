@@ -6,7 +6,7 @@ Personal floating desktop widget for checking Codex quota from the local Codex D
 
 ## Highlights
 
-- Shows your Codex plan, 5-hour quota, weekly quota, and next reset time in a compact always-on-top widget.
+- Shows your Codex plan, weekly quota, next reset time, and reset credits in a compact always-on-top widget.
 - Uses clear quota states for healthy, caution, and critical remaining usage.
 - Collapses into a small floating orb when idle, then expands on hover.
 - Indicates whether quota is currently being consumed.

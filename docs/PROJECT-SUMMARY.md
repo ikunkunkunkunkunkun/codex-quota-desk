@@ -2,7 +2,7 @@
 
 ## 一句话定位
 
-QuotaLens for Codex 是一个 Tauri 2 桌面悬浮窗，用本机 Codex Desktop 登录态只读查询 Codex 额度，并以小卡片展示 5 小时额度、每周额度、重置时间、重置机会和会员类型。
+QuotaLens for Codex 是一个 Tauri 2 桌面悬浮窗，用本机 Codex Desktop 登录态只读查询 Codex 周额度，并以小卡片展示周额度、重置时间、重置机会和会员类型。
 
 ## 当前技术栈
 
@@ -13,7 +13,7 @@ QuotaLens for Codex 是一个 Tauri 2 桌面悬浮窗，用本机 Codex Desktop 
 
 ## 主要功能
 
-- 悬浮额度卡片：展示 Codex 5 小时窗口剩余额度、周额度、重置时间和重置机会。
+- 悬浮额度卡片：展示 Codex 周额度、重置时间和重置机会。
 - 桌面行为：无边框、透明、置顶、可拖动、可锁定鼠标穿透、可托盘显示/隐藏/刷新/解锁/退出。
 - 跨平台构建：同一套前端 UI/动效代码输出 Windows unsigned 包和 macOS Universal unsigned 包。
 - 状态兜底：接口失败时保留上次成功数据并标记 stale；登录失效、限流、接口变形会给安全提示。

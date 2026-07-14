@@ -50,8 +50,8 @@ git push origin main
 推送 `v*` tag 会触发 release workflow：
 
 ```bash
-git tag v0.1.3
-git push origin v0.1.3
+git tag v0.1.4
+git push origin v0.1.4
 ```
 
 构建完成后，到 GitHub 仓库的 Releases 页面检查 draft release。附件应包含：

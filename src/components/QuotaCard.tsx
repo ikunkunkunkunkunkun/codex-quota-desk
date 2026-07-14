@@ -37,7 +37,7 @@ function localizedBackendMessage(message: string | null, language: Language): st
   if (normalized.includes("rate limited")) return "请求过于频繁，将稍后自动重试。";
   if (normalized.includes("network")) return "网络不可用，将自动重试。";
   if (normalized.includes("format")) return "额度响应格式已变化。";
-  if (normalized.includes("missing the 5h")) return "额度响应缺少 5 小时窗口。";
+  if (normalized.includes("missing the weekly")) return "额度响应缺少周额度窗口。";
   if (normalized.includes("refresh is already running")) return "额度正在刷新，请稍候。";
   return message;
 }
@@ -61,8 +61,7 @@ export const QuotaCard = memo(function QuotaCard({
   const [showCreditTip, setShowCreditTip] = useState(initialShowCreditTip);
   const language = normalizeLanguage(preferences.language);
   const t = copy[language];
-  const primary = snapshot.shortWindow ? clampPercent(snapshot.shortWindow.remainingPercent) : null;
-  const weekly = snapshot.weeklyWindow ? clampPercent(snapshot.weeklyWindow.remainingPercent) : null;
+  const primary = snapshot.weeklyWindow ? clampPercent(snapshot.weeklyWindow.remainingPercent) : null;
   const staleAge = Date.now() - new Date(snapshot.updatedAt).getTime();
   const staleExpired = snapshot.status === "stale" && staleAge > 30 * 60_000;
   const available = snapshot.status === "ok" || (snapshot.status === "stale" && !staleExpired);
@@ -118,11 +117,11 @@ export const QuotaCard = memo(function QuotaCard({
           <div className="progress" role="progressbar" aria-label={t.availableLabel(primary)} aria-valuemin={0} aria-valuemax={100} aria-valuenow={primary}>
             <span style={{ width: `${primary}%` }} />
           </div>
-          <p className="reset-time">{formatResetTime(snapshot.shortWindow?.resetsAt ?? null, new Date(), language)}</p>
+          <p className="reset-time">{t.weeklyUntil(formatResetDate(snapshot.weeklyWindow?.resetsAt ?? null, language))}</p>
           <footer className="card-footer">
             <div className="weekly-metric">
               <p>{t.weeklyUntil(formatResetDate(snapshot.weeklyWindow?.resetsAt ?? null, language))}</p>
-              <strong>{weekly ?? "--"}<small>{weekly === null ? "" : "%"}</small></strong>
+              <strong>{formatResetTime(snapshot.weeklyWindow?.resetsAt ?? null, new Date(), language)}</strong>
               <div className="reset-credit-row" onMouseDown={(event) => event.stopPropagation()}>
                 <span>{snapshot.resetCredits === null ? t.resetCreditUnknown : t.resetCredits(snapshot.resetCredits)}</span>
                 {snapshot.resetCredits !== null && snapshot.resetCredits > 0 ? (
@@ -160,7 +159,7 @@ export const QuotaOrb = memo(function QuotaOrb({ snapshot, onDrag, onHover, lang
   const idleTimer = useRef<number | null>(null);
   const activeLanguage = normalizeLanguage(language);
   const t = copy[activeLanguage];
-  const primary = snapshot.shortWindow ? clampPercent(snapshot.shortWindow.remainingPercent) : null;
+  const primary = snapshot.weeklyWindow ? clampPercent(snapshot.weeklyWindow.remainingPercent) : null;
   const tier = quotaTier(primary);
   const available = snapshot.status === "ok" && primary !== null;
 

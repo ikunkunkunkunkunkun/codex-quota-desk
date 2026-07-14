@@ -342,20 +342,6 @@ pub async fn fetch_snapshot(client: &reqwest::Client) -> ProviderSnapshot {
         .get("rate_limit")
         .or_else(|| usage.get("rateLimit"))
         .unwrap_or(&usage);
-    let short_window = parse_window(find_window(
-        rate_limit,
-        &[
-            "primary_window",
-            "primaryWindow",
-            "short_window",
-            "shortWindow",
-            "five_hour_window",
-            "fiveHourWindow",
-            "5h",
-            "primary",
-        ],
-        18_000,
-    ));
     let weekly_window = parse_window(find_window(
         rate_limit,
         &[
@@ -370,8 +356,8 @@ pub async fn fetch_snapshot(client: &reqwest::Client) -> ProviderSnapshot {
         ],
         604_800,
     ));
-    if short_window.is_none() {
-        return ProviderSnapshot::failure("unavailable", "Quota response is missing the 5h window.");
+    if weekly_window.is_none() {
+        return ProviderSnapshot::failure("unavailable", "Quota response is missing the weekly window.");
     }
 
     let usage_credits = usage
@@ -425,7 +411,7 @@ pub async fn fetch_snapshot(client: &reqwest::Client) -> ProviderSnapshot {
         provider: "codex".into(),
         display_name: "CODEX".into(),
         plan: pick_string(&usage, &["plan_type", "planType"]).map(|value| value.to_uppercase()),
-        short_window,
+        short_window: None,
         weekly_window,
         reset_credits,
         reset_credit_expires_at,

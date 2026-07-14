@@ -1,4 +1,4 @@
-# QuotaLens for Codex 0.1.3
+# QuotaLens for Codex 0.1.4
 
 QuotaLens for Codex is a personal floating desktop widget for checking Codex quota from the local Codex Desktop login state.
 

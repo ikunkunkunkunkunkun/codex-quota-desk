@@ -29,7 +29,7 @@ export default function App() {
       if (hasFailure) failures.current += 1;
       else failures.current = 0;
       for (const item of values) {
-        const nextPrimary = item.shortWindow?.remainingPercent;
+        const nextPrimary = item.weeklyWindow?.remainingPercent;
         const previous = previousPrimary.current.get(item.provider);
         if (nextPrimary !== undefined && previous !== undefined && nextPrimary < previous) {
           setConsumingProviders((current) => new Set(current).add(item.provider));
