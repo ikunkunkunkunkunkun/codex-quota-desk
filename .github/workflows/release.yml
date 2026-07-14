@@ -19,11 +19,6 @@ jobs:
             archive-name: codex-quota-desk-windows-unsigned.zip
             build-command: npm run tauri -- build
             artifact-path: src-tauri/target/release/bundle/*
-          - os: macos-latest
-            artifact-name: codex-quota-desk-macos-universal-unsigned
-            archive-name: codex-quota-desk-macos-universal-unsigned.zip
-            build-command: npm run tauri -- build --target universal-apple-darwin
-            artifact-path: src-tauri/target/universal-apple-darwin/release/bundle/*
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
@@ -32,9 +27,6 @@ jobs:
           node-version: 22
           cache: npm
       - uses: dtolnay/rust-toolchain@stable
-      - name: Install macOS universal targets
-        if: runner.os == 'macOS'
-        run: rustup target add aarch64-apple-darwin x86_64-apple-darwin
       - uses: Swatinem/rust-cache@v2
         with:
           workspaces: src-tauri
