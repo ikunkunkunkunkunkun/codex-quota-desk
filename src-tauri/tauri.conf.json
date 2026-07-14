@@ -1,0 +1,43 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Codex Quota Desk",
+  "version": "0.1.0",
+  "identifier": "com.yourname.codexquotadesk",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "widget",
+        "title": "Codex Quota Desk",
+        "width": 100,
+        "height": 100,
+        "minWidth": 80,
+        "minHeight": 80,
+        "maxWidth": 360,
+        "maxHeight": 360,
+        "resizable": true,
+        "decorations": false,
+        "transparent": true,
+        "alwaysOnTop": true,
+        "skipTaskbar": true,
+        "shadow": false,
+        "visible": true
+      }
+    ],
+    "security": { "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:" }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "category": "Utility",
+    "shortDescription": "Personal Codex quota desk widget",
+    "longDescription": "A personal floating desktop widget for checking Codex usage limits from the local Codex Desktop login state.",
+    "copyright": "Copyright Codex Quota Desk contributors; portions Copyright Quota Float contributors",
+    "icon": ["icons/32x32.png", "icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"]
+  }
+}
